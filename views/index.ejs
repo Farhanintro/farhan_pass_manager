@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="/getdatastyle.css">
+    <title>Farhan PM</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <table class="responsive-table">
+            <caption>Farhan Akhtar All Passwords</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Website</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <!-- <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th> -->
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="7">Sources:</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <% cursor.forEach(item=> { %>
+                    <tr>
+
+
+
+                        <th scope="row" style="color: white; background-color:rgb(73, 158, 73)">
+                            <%= item.website %>
+                        </th>
+                        <td data-title="Email or Username">
+                            <%= item.user %>
+                        </td>
+                        <td data-title="Password">
+                            <%= item.password %>
+                        </td>
+                        <!-- <td data-title="Worldwide Gross" data-type="currency">$1,657,870,986</td>
+                        <td data-title="Domestic Gross" data-type="currency">$543,638,043</td>
+                        <td data-title="International Gross" data-type="currency">$1,114,232,943</td>
+                        <td data-title="Budget" data-type="currency">$260,000,000</td> -->
+
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
