@@ -13,12 +13,12 @@ const port = process.env.PORT || 8080;
 
 
 app.use(bodyParser.json());
-app.set('view engine', 'ejs',  'js');
+app.set('view engine', 'ejs', 'js');
 app.use(express.static(path.join(__dirname, "/")));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
- 
-  
+
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/indexmain.html'));
@@ -32,7 +32,7 @@ app.get('/login', function (req, res) {
 app.post('/login', async (req, res) => {
   try {
 
-//! get data from database to show on password manager
+    //! get data from database to show on password manager
     await client.connect();
 
     // Select the database and collection
@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
 
     const userdata = await collection.findOne({ email: email });
 
-    
+
 
     if (userdata.password === password) {
       res.status(201).render('index', { cursor });
@@ -75,9 +75,9 @@ app.post('/send-data', async (req, res) => {
 
   // const bcrypt = require("bcryptjs");
 
- 
+
   //   const passwordHash = await bcrypt.hash(password, 12)
-  
+
 
 
 
