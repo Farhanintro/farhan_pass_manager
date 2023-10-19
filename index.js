@@ -98,6 +98,7 @@ app.post('/send-data', async (req, res) => {
       const result = await collection.insertOne(documentToInsert);
       console.log('Document inserted with _id:', result.insertedId);
     } catch (error) {
+      
       console.error('Error inserting data:', error);
     }
   }
