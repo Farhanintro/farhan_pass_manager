@@ -100,7 +100,10 @@ app.post('/send-data', async (req, res) => {
     } catch (error) {
       
       console.error('Error inserting data:', error);
-    }
+    }finally {
+      // Close the connection
+       await client.close(); 
+     }
   }
 
   // Call the insertData function to insert data
