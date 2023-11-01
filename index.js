@@ -85,6 +85,9 @@ app.post('/send-data', async (req, res) => {
 
   async function insertData() {
     try {
+
+      await client.connect();
+
       db = client.db(process.env.db); // Replace with your database name
       const collection = db.collection(process.env.dbc1); // Replace with your collection name
 
@@ -102,7 +105,7 @@ app.post('/send-data', async (req, res) => {
       console.error('Error inserting data:', error);
     }finally {
       // Close the connection
-       await client.close(); 
+       await client.close();  
      }
   }
 
