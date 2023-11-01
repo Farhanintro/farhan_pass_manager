@@ -58,7 +58,8 @@ app.post('/login', async (req, res) => {
     if (userdata.password === password) {
       res.status(201).render('index', { cursor });
     } else {
-      res.send("password not match");
+      res.sendFile(path.join(__dirname, '/public/chal.gif'));
+      // res.send("password not match");
     }
 
 
