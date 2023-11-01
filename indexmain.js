@@ -1,7 +1,7 @@
-
+require('dotenv').config()
 function sendkey() {
 
-    const SendDataKey = 327426;
+    const SendDataKey = process.env.seckey;
     // const mySendDataKey = parseInt(SendDataKey, 10)
     // console.log(mySendDataKey);
     const secure_key = document.getElementById("secure_key").value;
